@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#9b4518" />
+  <title>RuangKita — Kalender & Riwayat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="assets/style.css" rel="stylesheet" />
+  <script src="assets/jquery.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" data-page="home" href="#" aria-label="RuangKita beranda">
+        <span class="brand-mark" aria-hidden="true"><span>R</span><i></i></span>
+        <span class="brand-copy"><b>ruangkita</b><small>SPACE MANAGEMENT</small></span>
+      </a>
+
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Navigasi utama">
+        <a class="nav-link active" data-page="home" href="#"><span class="nav-icon">◫</span><span>Dashboard kalender</span><span class="nav-arrow">↗</span></a>
+        <a class="nav-link ajax-link" data-title="Riwayat Booking" href="pages/riwayat.html"><span class="nav-icon">▤</span><span>Riwayat booking</span></a>
+        <a class="nav-link ajax-link" data-title="Booking Berulang" href="pages/berulang.html"><span class="nav-icon">↻</span><span>Booking berulang</span></a>
+      </nav>
+
+      <div class="sidebar-tip">
+        <span class="tip-spark">✳</span>
+        <p class="tip-kicker">TIPS HARI INI</p>
+        <b>Jadwal rapi, kegiatan lancar.</b>
+        <p>Periksa status pengajuan sebelum hari penggunaan ruang.</p>
+        <a class="tip-link ajax-link" data-title="Riwayat Booking" href="pages/riwayat.html">Periksa riwayat <span>→</span></a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <span class="avatar">A</span>
+        <span class="profile-copy"><b>A’isyah Tri Harfani</b><small>Mahasiswa</small></span>
+        <span class="profile-menu" aria-hidden="true">•••</span>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-start">
+          <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Buka menu">☰</button>
+          <div class="breadcrumb"><span>RuangKita</span><span class="crumb-slash">/</span><b id="pageTitle">Dashboard kalender</b></div>
+        </div>
+        <div class="topbar-right">
+          <div class="prototype-label"><span class="live-dot"></span> Mode simulasi</div>
+          <span class="avatar top-avatar" aria-label="Profil A’isyah">A</span>
+        </div>
+      </header>
+
+      <section class="page-content" id="pageContent">
+        <section class="welcome-hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> RUANG YANG TERATUR DIMULAI DI SINI</p>
+            <h1>Halo, A’isyah<span class="hero-period">.</span></h1>
+            <p>Pantau agenda ruang, cek status booking, dan rencanakan jadwal rutin dalam satu tempat.</p>
+            <a class="btn btn-lime ajax-link" data-title="Booking Berulang" href="pages/berulang.html">+ Buat booking berulang <span>↗</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-calendar"><div class="art-cal-top"><i></i><i></i><i></i></div><div class="art-cal-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><b></b><b></b><b></b><b></b><b></b><b></b></div></div>
+            <span class="art-star star-a">✳</span><span class="art-star star-b">✦</span><span class="art-chip">AGENDA READY</span>
+          </div>
+          <div class="hero-date"><span class="date-icon">◷</span><span><small>HARI INI</small><b id="todayDate">Memuat tanggal…</b></span></div>
+        </section>
+
+        <div class="section-heading stats-heading"><div><span class="section-kicker">RINGKASAN</span><h2>Aktivitas peminjaman</h2></div><span class="period-chip"><span>●</span> Bulan ini</span></div>
+        <div class="stats-grid">
+          <article class="stat-card stat-total"><div class="stat-card-head"><span class="stat-symbol">▦</span><span class="stat-trend">Semua pengajuan</span></div><p>Total pengajuan</p><div class="stat-value">12</div><div class="stat-foot"><span class="foot-marker"></span> Transaksi booking</div></article>
+          <article class="stat-card stat-approved"><div class="stat-card-head"><span class="stat-symbol">✓</span><span class="stat-trend">Siap digunakan</span></div><p>Booking disetujui</p><div class="stat-value">8</div><div class="stat-foot"><span class="foot-marker"></span> Sudah terkonfirmasi</div></article>
+          <article class="stat-card stat-pending"><div class="stat-card-head"><span class="stat-symbol">◷</span><span class="stat-trend">Perlu dipantau</span></div><p>Menunggu persetujuan</p><div class="stat-value">2</div><div class="stat-foot"><span class="foot-marker"></span> Dalam proses</div></article>
+          <article class="stat-card stat-recurring"><div class="stat-card-head"><span class="stat-symbol">↻</span><span class="stat-trend">Terjadwal</span></div><p>Booking berulang</p><div class="stat-value">3</div><div class="stat-foot"><span class="foot-marker"></span> Agenda rutin aktif</div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel calendar-panel">
+            <div class="panel-heading"><div><span class="section-kicker">ATUR WAKTU</span><h2>Kalender pemakaian</h2><p class="muted">Pilih tanggal untuk melihat agenda ruang.</p></div><span class="panel-icon">▦</span></div>
+            <div class="calendar-toolbar"><button class="calendar-nav" id="prevMonth" type="button" aria-label="Bulan sebelumnya">←</button><b id="calendarMonth">Bulan</b><button class="calendar-nav" id="nextMonth" type="button" aria-label="Bulan berikutnya">→</button></div>
+            <div class="calendar-grid" id="calendar" aria-label="Kalender bulanan"></div>
+            <div class="calendar-legend"><span><i class="legend-dot approved-dot"></i> Disetujui</span><span><i class="legend-dot pending-dot"></i> Menunggu</span><span><i class="legend-dot other-dot"></i> Lainnya</span></div>
+            <div class="selected-date-panel" id="selectedDatePanel" aria-live="polite"></div>
+          </section>
+
+          <section class="panel agenda-panel">
+            <div class="panel-heading"><div><span class="section-kicker">JANGAN TERLEWAT</span><h2>Agenda mendatang</h2><p class="muted">Jadwal penggunaan ruang terdekat.</p></div><span class="agenda-count" id="upcomingCount">03</span></div>
+            <div class="schedule-list" id="upcomingList">
+              <div class="schedule-item"><div class="schedule-date"><b>27</b><small>OKT</small></div><div class="schedule-detail"><b>K2.03.04</b><span>Diskusi kelompok · 09.00–11.00</span></div><span class="status-badge approved">Disetujui</span></div>
+              <div class="schedule-item"><div class="schedule-date"><b>28</b><small>OKT</small></div><div class="schedule-detail"><b>K4.02.01</b><span>Rapat organisasi · 13.00–15.00</span></div><span class="status-badge pending">Menunggu</span></div>
+              <div class="schedule-item"><div class="schedule-date"><b>30</b><small>OKT</small></div><div class="schedule-detail"><b>K1.06.03</b><span>Belajar kelompok · 10.00–12.00</span></div><span class="status-badge approved">Disetujui</span></div>
+            </div>
+            <a class="panel-action ajax-link" data-title="Riwayat Booking" href="pages/riwayat.html">Lihat semua riwayat <span>→</span></a>
+            <div class="agenda-note"><span>✳</span><p><b>Pengingat kecil</b><br />Status “Menunggu” belum berarti ruang sudah bisa digunakan.</p></div>
+            <div class="recurring-banner"><div class="recurring-symbol">↻</div><div><b>Punya jadwal rutin?</b><p>Buat beberapa tanggal dalam satu pengajuan.</p></div><a class="round-arrow ajax-link" data-title="Booking Berulang" href="pages/berulang.html" aria-label="Buka booking berulang">↗</a></div>
+          </section>
+        </div>
+
+        <footer class="footer"><span>© 2026 RuangKita</span><span>Kalender · Riwayat · Booking berulang</span><span class="demo-foot"><i></i> Data simulasi</span></footer>
+      </section>
+    </main>
+  </div>
+  <script src="assets/pages-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

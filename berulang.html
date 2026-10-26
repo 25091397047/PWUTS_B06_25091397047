@@ -1,0 +1,41 @@
+<section class="subpage">
+  <div class="subpage-hero">
+    <div><p class="eyebrow"><span class="eyebrow-line"></span> TRANSAKSI BERJADWAL</p><h1>Booking berulang<span class="hero-period">.</span></h1><p class="muted">Rencanakan kegiatan rutin dengan satu pengajuan untuk beberapa tanggal sekaligus.</p></div>
+    <div class="subpage-art recurring-art" aria-hidden="true"><span>↻</span><i>MON</i><b>WEEKLY</b></div>
+  </div>
+  <div class="form-layout">
+    <section class="panel form-panel">
+      <div class="panel-heading"><div><span class="section-kicker">FORM PENGAJUAN</span><h2>Detail booking</h2><p class="muted">Lengkapi informasi berikut. Kolom bertanda * wajib diisi.</p></div><span class="step-indicator"><b>01</b><span> / 01</span></span></div>
+      <form id="recurringForm" novalidate>
+        <div class="form-section-title"><span>01</span><b>Informasi pemesan</b></div>
+        <div class="form-grid">
+          <label>Nama pemesan *<input id="recName" placeholder="Nama lengkap" autocomplete="name" required /><small class="field-error" data-for="recName"></small></label>
+          <label>Email kampus *<input id="recEmail" placeholder="nama@kampus.ac.id" type="email" autocomplete="email" required /><small class="field-error" data-for="recEmail"></small></label>
+        </div>
+        <div class="form-section-title section-spaced"><span>02</span><b>Ruang dan kebutuhan</b></div>
+        <div class="form-grid">
+          <label>Ruang yang dibutuhkan *<select id="recRoom" required><option value="">Pilih ruang</option></select><small class="field-error" data-for="recRoom"></small></label>
+          <label>Tujuan penggunaan *<select id="recPurpose" required><option value="">Pilih tujuan</option><option>Diskusi kelompok</option><option>Rapat organisasi</option><option>Praktikum rutin</option><option>Bimbingan</option><option>Kegiatan akademik</option></select><small class="field-error" data-for="recPurpose"></small></label>
+          <label>Tanggal mulai *<input id="recStartDate" type="date" required /><small class="field-error" data-for="recStartDate"></small></label>
+          <label>Tanggal selesai *<input id="recEndDate" type="date" required /><small class="field-error" data-for="recEndDate"></small></label>
+          <label>Jam mulai *<input id="recStartTime" type="time" value="09:00" required /><small class="field-error" data-for="recStartTime"></small></label>
+          <label>Jam selesai *<input id="recEndTime" type="time" value="11:00" required /><small class="field-error" data-for="recEndTime"></small></label>
+          <label class="participants-field">Jumlah peserta *<input id="recParticipants" type="number" min="1" max="200" placeholder="Contoh: 25" required /><small class="field-hint">Kapasitas simulasi: 1–200 orang</small><small class="field-error" data-for="recParticipants"></small></label>
+        </div>
+        <div class="weekday-block"><div class="weekday-title">Hari pengulangan * <small>Pilih satu atau beberapa hari</small></div><div class="weekday-options">
+          <label><input name="weekday" type="checkbox" value="Senin" /><span>Sen</span></label><label><input name="weekday" type="checkbox" value="Selasa" /><span>Sel</span></label><label><input name="weekday" type="checkbox" value="Rabu" /><span>Rab</span></label><label><input name="weekday" type="checkbox" value="Kamis" /><span>Kam</span></label><label><input name="weekday" type="checkbox" value="Jumat" /><span>Jum</span></label><label><input name="weekday" type="checkbox" value="Sabtu" /><span>Sab</span></label>
+        </div><small class="field-error" data-for="weekdays"></small></div>
+        <label class="full-label notes-label">Catatan tambahan <span>Opsional</span><textarea id="recNotes" maxlength="300" placeholder="Misalnya, kebutuhan proyektor atau susunan meja…" rows="3"></textarea><small class="field-hint"><span id="notesCount">0</span>/300 karakter</small></label>
+        <div class="form-alert" id="recAlert" role="alert" aria-live="polite"></div>
+        <div class="form-actions"><button class="btn btn-quiet" type="reset">Kosongkan form</button><button class="btn btn-primary" type="submit">Validasi jadwal <span>↗</span></button></div>
+      </form>
+    </section>
+    <aside class="panel rules-panel">
+      <div class="rules-illustration"><span>↻</span><i>●</i><b>PLAN IT</b></div>
+      <span class="section-kicker">SEBELUM MENGAJUKAN</span><h3>Hal yang perlu dicek</h3>
+      <ul class="rules-list"><li><span>✓</span><div><b>Pilih hari yang sesuai</b><p>Jadwal akan diulang pada hari yang kamu centang.</p></div></li><li><span>✓</span><div><b>Perhatikan rentang tanggal</b><p>Tanggal selesai harus sama atau setelah tanggal mulai.</p></div></li><li><span>✓</span><div><b>Pastikan waktu masuk akal</b><p>Jam selesai harus lebih akhir dari jam mulai.</p></div></li><li><span>✓</span><div><b>Cek ketersediaan ruang</b><p>Setiap jadwal tetap perlu ditinjau sebelum disetujui.</p></div></li></ul>
+      <div class="rules-divider"></div><div class="simulation-note"><span>ⓘ</span><p><b>Ini masih simulasi frontend.</b><br />Form hanya memvalidasi data di browser. Pengajuan belum dikirim atau disimpan ke database.</p></div>
+    </aside>
+  </div>
+  <section class="result-card recurring-result" hidden id="recResult" aria-live="polite"></section>
+</section>

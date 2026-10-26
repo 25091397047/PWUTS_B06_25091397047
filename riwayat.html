@@ -1,0 +1,20 @@
+<section class="subpage">
+  <div class="subpage-hero">
+    <div><p class="eyebrow"><span class="eyebrow-line"></span> ARSIP TRANSAKSI</p><h1>Riwayat booking<span class="hero-period">.</span></h1><p class="muted">Temukan pengajuan terdahulu dan periksa statusnya tanpa harus menelusuri satu per satu.</p></div>
+    <div class="subpage-art history-art" aria-hidden="true"><span>▤</span><i>✓</i><b>BK</b></div>
+  </div>
+  <section class="panel history-panel">
+    <div class="panel-heading history-heading"><div><span class="section-kicker">DAFTAR TRANSAKSI</span><h2>Semua riwayat peminjaman</h2><p class="muted">Cari berdasarkan kode, ruang, atau tujuan, lalu gunakan filter yang tersedia.</p></div><div class="history-heading-actions"><span class="results-chip"><i></i> Data contoh</span><button class="btn btn-outline export-btn" id="exportHistory" type="button"><span>↓</span> Ekspor CSV</button></div></div>
+    <div class="filter-row">
+      <label class="search-field"><span>⌕</span><input id="historySearch" placeholder="Cari kode, ruang, atau tujuan…" type="search" aria-label="Cari riwayat" /><kbd>/</kbd></label>
+      <label class="filter-select"><span>Status</span><select id="historyStatus" aria-label="Filter status"><option value="">Semua status</option><option value="Disetujui">Disetujui</option><option value="Menunggu">Menunggu</option><option value="Dibatalkan">Dibatalkan</option><option value="Ditolak">Ditolak</option></select></label>
+      <label class="filter-select date-filter"><span>Tanggal</span><input aria-label="Filter tanggal" id="historyDate" type="date" /></label>
+      <button class="btn btn-quiet clear-filters" id="clearHistoryFilters" type="button">Reset filter</button>
+    </div>
+    <div class="table-responsive"><table class="data-table"><thead><tr><th>KODE BOOKING</th><th>RUANG</th><th>TANGGAL</th><th>WAKTU</th><th>TUJUAN</th><th>STATUS</th><th></th></tr></thead><tbody id="historyBody"></tbody></table></div>
+    <div class="table-footer"><span id="historyCount">Total: 0 transaksi</span><div class="pagination" id="historyPagination" aria-label="Halaman riwayat"></div></div>
+    <div class="notice" id="historyNotice" role="status" aria-live="polite"></div>
+  </section>
+  <section class="result-card detail-card" hidden id="historyDetail" aria-live="polite"></section>
+  <p class="prototype-note"><span>ⓘ</span> Riwayat pada versi ini adalah data contoh untuk demonstrasi tampilan. Perubahan belum tersimpan ke server atau database.</p>
+</section>
